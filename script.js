@@ -6,6 +6,7 @@ const link3 = document.getElementById('link3');
 const link4 = document.getElementById('link4');
 const link5 = document.getElementById('link5');
 const favicon = document.getElementById('favicon');
+const switchmode = document.getElementById('switch-mode');
 
   function updateFavicon() {
     const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -23,6 +24,15 @@ const favicon = document.getElementById('favicon');
       
   },1000);
 
+
+function lightmode(){
+  document.body.classList.remove('darkmode');
+}
+
+function darkmode(){
+  document.body.classList.add('darkmode');
+
+}
 function open_menu(){
     nav.classList.add('show');
     // navlayer.classList.add('sheet');
