@@ -290,13 +290,15 @@ button {
     width: 37px;
     padding: 0;
     border: 0;
-    /* border: 1px solid white; */
+    /* border: 1px solid red; */
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     border-radius: 50%;
     cursor: pointer;
     position: fixed;
+    z-index: 100;
     top: 90px;
     right: 50px;
     transition: transform 0.5s ease;
@@ -305,24 +307,29 @@ button {
 
     span {
         padding: 0;
-        /* border: 1px solid rgb(255, 0, 0); */
+        width: 100%;
+        /* border: 1px solid red; */
         transition: transform 0.5s ease;
-
         font-size: 21px;
         color: var(--bg-color);
         display: flex;
+        align-items: center;
+        justify-content: center;
         align-self: center;
+        p{
+        color: var(--bg-color);
+        transform: rotate(-50deg);
+        }
     }
 
     span:hover {
-        transform: scale(1.35);
-    }
+        transform: scale(1.25);
 
-    #dark {
-        size: 30px;
+    }
+    span #dark {
+        height: 100%;
+        size: 27px;
         display: inline-block;
-        transform: rotate(-50deg);
-        /* color: ; */
     }
 }
 
@@ -460,7 +467,7 @@ nav {
 
 /* home page */
 .main {
-    height: 90vh;
+    height: 90dvh;
     width: 100%;
     /* padding: 0; */
     /* border: 1px solid red; */
@@ -694,7 +701,7 @@ nav {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 7px;
+    gap: 10px;
 
 }
 
@@ -709,7 +716,7 @@ nav {
     cursor: pointer;
     border: 1px solid var(--text-color-thickgrey);
     background-color: var(--thinner-color);
-    box-shadow: 0px 5px 20px rgba(116, 114, 114, 0.5);
+    box-shadow: 10px 10px 20px rgba(116, 114, 114, 0.5);
     transition: transform 200ms ease;
 }
 
@@ -1095,7 +1102,12 @@ footer {
     }
 
     /* skill section */
-
+.skills{
+    padding: 0;
+    min-height: 350px;
+    display: flex;
+    align-self: center;
+}
     /* project page */
 
     /* services page */
@@ -1183,7 +1195,7 @@ footer {
         /* align-self: flex-end; */
         /* justify-content: end; */
         transition: top 300ms ease-in;
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(50px);
         -webkit-backdrop-filter: blur(50px);
         gap: 15px;
@@ -1269,7 +1281,7 @@ footer {
 
     /* about page */
     .about {
-        height: 100vh;
+        height: auto;
         display: flex;
         flex-direction: column;
         /* align-items: center; */
@@ -1299,6 +1311,11 @@ footer {
 
     /* skill section */
 
+.skills{
+    width: auto;
+    /* display: flex; */
+    padding: 0;
+}
     /* project page */
     .projects {
         border: 0;
@@ -1365,7 +1382,10 @@ footer {
         padding: 0;
         margin: 0;
     }
-
+    #switch-mode{
+        top: 90px;
+        right: 25px;
+    }
     .nav-bar {
         width: 100%;
         /* height: auto; */
@@ -1448,7 +1468,7 @@ footer {
     /* home page */
     .main {
         width: auto;
-        padding: 0;
+        padding-top: 25px;
         height: 100vh;
     }
 
@@ -1506,28 +1526,37 @@ footer {
 
     /* about page */
     .about {
-        height: 100vh;
+        height: auto;
         display: flex;
         flex-direction: column;
     }
 
     .sub_about {
+        /* border: 1px solid red; */
+        padding: 0px 7px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: start;
-        /* padding-bottom: 15px; */
     }
 
     .sub_about1 {
-        width: auto;
+        width: fit-content;
         padding: 0;
         /* display: flex; */
+        span{
+            font-size: 25px;
+        }
+        p{
+            font-size: 12px;
+        }
     }
 
     .divider {
+    /* border: 1px solid red; */
+
         display: flex;
-        width: 400px;
+        width: 250px;
         height: 3px;
         align-self: center;
     }
@@ -1537,7 +1566,20 @@ footer {
     }
 
     /* skill section */
+.skills{
+    padding: 0;
+    width: auto;
+    display: flex;
+    gap: 10px;
+    p{
+        font-size: 15px;
+    }
 
+}
+.skill_box{
+    height: 75px;
+    width: 60px;
+}
     /* project page */
     .projects {
         /* display: flex; */
@@ -1551,9 +1593,12 @@ footer {
     }
 
     .sub_projects .cards {
+        padding: 7px 10px;
         min-height: 210px;
         max-height: 230px;
-
+        p{
+            font-size: 15px;
+        }
         a {
             font-size: 15px;
             padding: 5px 9px;
